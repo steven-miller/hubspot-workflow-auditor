@@ -7,6 +7,8 @@ const app = express();
 // const db = database.getDb();
 const port = 3000;
 
+app.use(express.static(__dirname + '/../client/dist'));
+
 // powerhouse, a true big dawg
 let db;
 let workflowsDb;
@@ -29,14 +31,14 @@ MongoClient.connect("mongodb://localhost:27017/", { useNewUrlParser: true }, (er
 // app.use(expressMongoDb('mongodb://localhost:27017/workflows'));
 
 app.get('/actions', (req, res) => {
-  stepsDb.find({ workflowCount: { $gt: 1 }}).toArray((err, documents) => {
-    console.log(documents);
+  stepsDb.find({ workflowCount: { $gt: 1 }}).limit(10).toArray((err, documents) => {
+    // console.log(documents);
     res.send(documents);
   });
 });
 
 app.get('/inactive', (req, res) => {
-  workflowsDb.find({ active: false }).toArray((err, documents) => {
+  workflowsDb.find({ active: false }).limit(10).toArray((err, documents) => {
     res.send(documents);
   })
 });

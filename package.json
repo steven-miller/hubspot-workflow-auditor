@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server/index.js"
+    "start": "nodemon server/index.js",
+    "react-dev": "webpack -d --watch"
   },
   "repository": {
     "type": "git",
@@ -22,14 +23,22 @@
   },
   "homepage": "https://github.com/steven-miller/hubspot-workflow-auditor#readme",
   "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
     "base32": "0.0.6",
     "bottleneck": "^2.19.1",
     "express": "^4.17.1",
     "express-mongo-db": "^2.0.4",
     "mongodb": "^3.2.7",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "request": "^2.88.0"
   },
   "devDependencies": {
-    "dotenv": "^8.0.0"
+    "babel-loader": "^8.0.6",
+    "dotenv": "^8.0.0",
+    "webpack": "^4.35.0",
+    "webpack-cli": "^3.3.5"
   }
 }
