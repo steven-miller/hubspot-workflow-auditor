@@ -1,0 +1,6 @@
+/node_modules/
+.env
+test-data.json
+test-workflow.json
+notes.md
+structure-notes.md
