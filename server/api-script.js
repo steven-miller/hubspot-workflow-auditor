@@ -17,6 +17,7 @@ const limiter = new Bottleneck({
 MongoClient.connect("mongodb://localhost:27017/", { useNewUrlParser: true }, (err, client) => {
   if (err) throw err;
   db = client.db('workflows');
+  console.log('db connected');
 
   workflowsDb = db.collection('workflows');
   stepsDb = db.collection('steps');
@@ -227,4 +228,10 @@ const upsertAction = (action, category, actionId, portalId, workflowId) => {
   });
 };
 
-populateDatabase();
+// populateDatabase();
+
+module.exports = {
+  getDb: () => {
+    return db;
+  }
+};
