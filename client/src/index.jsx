@@ -36,19 +36,18 @@ class App extends React.Component {
     return (
         <div className='container'>
           <div className='row'>
-            <h1>HubSpot Workflow Auditor</h1>
-          </div>
-          <div className='row'>
-            <h2>Inactive Workflows</h2>
-          </div>
-          <div className='row'>
-            <Inactive workflows={this.state.workflows} />
-          </div>
-          <div className='row'>
-            <h2>Duplicate Actions</h2>
-          </div>
-          <div className='row'>
-            <Actions actions={this.state.actions} />
+            <div className='col-sm-12'>
+              <h1>HubSpot Workflow Auditor</h1>
+              <h2>Inactive Workflows</h2>
+              <p>Workflows listed here have not been updated in 30 days and have another indication of inactivity (such as disabled or no contacts enrolled recently)</p>
+              <Inactive workflows={this.state.inactive} />
+              <h2>Active Workflows</h2>
+              <p>Below are some indications of duplicate actions or enrollments shared between workflows</p>
+              <h3>Duplicate Actions</h3>
+              <Actions actions={this.state.actions} />
+              <h3>Duplicate enrollments</h3>
+              <p>coming soon...</p>
+            </div>
           </div>
         </div>
       )
