@@ -28,7 +28,7 @@
     "@babel/preset-react": "^7.0.0",
     "base32": "0.0.6",
     "bottleneck": "^2.19.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-mongo-db": "^2.0.4",
     "mongodb": "^3.2.7",
     "react": "^16.8.6",
